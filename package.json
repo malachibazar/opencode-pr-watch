@@ -1,0 +1,27 @@
+{
+  "name": "opencode-pr-watch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenCode plugin that wakes a session when its GitHub PR fails CI, gets review feedback, or conflicts, and shows PR status in OpenCode Desktop.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./rpc": "./src/rpc.ts",
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.4.1",
+    "effect": "4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "solid-js": "1.9.17",
+    "typescript": "^7.0.2",
+    "vite": "7.3.7",
+    "vite-plugin-solid": "2.11.10"
+  }
+}
