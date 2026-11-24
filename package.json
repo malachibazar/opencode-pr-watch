@@ -2,6 +2,7 @@
   "name": "opencode-pr-watch",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "OpenCode plugin that wakes a session when its GitHub PR fails CI, gets review feedback, or conflicts, and shows PR status in OpenCode Desktop.",
   "type": "module",
   "exports": {

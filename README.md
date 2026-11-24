@@ -68,3 +68,7 @@ bun run build   # rebuilds dist/gui-experimental.cjs, the Desktop UI
 ```
 
 OpenCode reloads the server part when `src/` changes, and the Desktop UI when `dist/` changes.
+
+## License
+
+[MIT](LICENSE)
