@@ -37,6 +37,9 @@ const ICON: Record<PullStatus, IconName> = {
   closed: "circle-ban-sign",
 }
 
+// The host sizes the pill's menu to its widest row, so long PR titles would stretch it across the window.
+const clip = (text: string, max = 50) => (text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text)
+
 const NOTIFY: Partial<Record<PullStatus, (pull: Pull) => { title: string; variant?: "error" }>> = {
   ready: (pull) => ({ title: `PR #${pull.number} is ready to merge` }),
   merged: (pull) => ({ title: `PR #${pull.number} merged` }),
@@ -119,7 +122,7 @@ export default Plugin.define({
         const rows: ComposerPillRow[] = [
           ...pulls.map((pull) => ({
             id: pull.url,
-            label: `#${pull.number} ${pull.title}`,
+            label: `#${pull.number} ${clip(pull.title)}`,
             icon: ICON[pull.status],
             tone: TONE[pull.status],
             detail: pull.detail,
